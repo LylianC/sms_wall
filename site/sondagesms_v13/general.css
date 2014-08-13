@@ -7,7 +7,7 @@
 /***********************************/
 
 /* remise a zero des navigateurs */
-* { margin: 0; padding: 0; border: none; font-size: 100%; font-family: Arial, sans-serif; font-weight: normal; font-style: normal; text-decoration: none; background: none; } 
+* { margin: 0; padding: 0; border: none; font-size: 100%; font-family: Arial, sans-serif; font-weight: normal; font-style: normal; text-decoration: none; background: none; }
 
 /* styles generaux */
 html, body { margin: auto; padding: 0; height: 100%; color: #000; font-size: 1em;  }
@@ -33,11 +33,13 @@ h1 { font-size: 1em; font-weight: bold; font-style: italic; color: #919191; text
 /*   BANDEAU INFERIEUR   */
 /*************************/
 
-#mention { background-color: #313131; width: 100%; height: 25px; line-height: 25px; vertical-align: middle; font-size: .8em; font-style: italic; color: #919191; text-align: center;  }
+#mention { background-color: #00e200; width: 100%; height: 25px; line-height: 25px; vertical-align: middle; font-size: .8em; font-style: italic; color: #919191; text-align: center;  }
 #mention img { margin-right: 20px; }
 #mention a { font-style: italic; font-weight: normal; }
 #mention a:hover, #mention a:focus, #mention a:active { color: #fff; }
-
+#mur{
+    background-color: tomato !important;
+}
 
 
 /************************/

@@ -2,9 +2,9 @@
 $phrases = $_GET["phrases"];
 $erase = $_GET["efface"];
 $titre = $_GET["titre"];
-$dbhost = 'localhost';
+$dbhost = 'root';
 $dbuser = 'sondagesms';
-$dbpass = '';
+$dbpass = 'root';
 $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 echo $phrases;
 echo $titre;

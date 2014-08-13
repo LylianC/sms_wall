@@ -10,9 +10,9 @@ header("Refresh: $sec; url=$page#details");
 //Connexion à la base de données
 $nombre_mess=0;
 $mysql_hostname = "localhost";
-$mysql_user     = "sondagesms";
-$mysql_password = "";
-$mysql_database = "sondagesms";
+$mysql_user     = "root";
+$mysql_password = "root";
+$mysql_database = "smswall";
 $titre="";
 $bd             = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Oops quelque chose ne s'est pas passé comme il faut");
 mysql_select_db($mysql_database, $bd) or die("Oops quelque chose ne s'est pas passé comme il faut");
@@ -20,7 +20,7 @@ mysql_select_db($mysql_database, $bd) or die("Oops quelque chose ne s'est pas pa
 //récuperation des infos
 
 $result = mysql_query("SELECT phrases FROM smswall");
-$titre=mysql_query("SELECT titre FROM smswall ORDER BY ID DESC LIMIT 0, 1");	
+$titre=mysql_query("SELECT titre FROM smswall ORDER BY ID DESC LIMIT 0, 1");
 ?>
 
 
@@ -77,7 +77,7 @@ $titre=mysql_query("SELECT titre FROM smswall ORDER BY ID DESC LIMIT 0, 1");
 
 
 	<!-- Affichage du titre -->
-<?php	
+<?php
 if ($data = mysql_fetch_assoc($titre)) {
     // on affiche le titre
     echo "<h2>".$data['titre']."</h2>";
@@ -90,7 +90,7 @@ if ($data = mysql_fetch_assoc($titre)) {
 
 	<!-- Affichage de chaque SMS -->
 	<div id="messages">
-<?php	
+<?php
 	while($data = mysql_fetch_assoc($result))
     {
     // on affiche les informations de l'enregistrement en cours
@@ -104,7 +104,7 @@ if ($data = mysql_fetch_assoc($titre)) {
 
 
 	<!-- Affichage du nombre de messages -->
-<?php	
+<?php
 echo "<div id='details'>".$nombre_mess." messages</div>";
 ?>
 
@@ -121,9 +121,9 @@ echo "<div id='details'>".$nombre_mess." messages</div>";
 <!-- Mention CC BY-SA -->
 <div id="mention">
 	<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">
-	<img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" height="20px" /></a> 
+	<img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" height="20px" /></a>
 	<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SMS Wall</span>
-	 de 
+	 de
 	<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Julien Rat & Marpa</span>
 	 est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">licence Creative Commons Attribution -  CC BY-SA 3.0</a>.
 </div>
